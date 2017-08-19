@@ -1,4 +1,15 @@
-language: node_js
-node_js:
-  - "0.10"
-  
+language: php
+sudo: required
+dist: trusty
+group: edge
+php:
+  - hhvm-3.3
+  - hhvm-3.6
+  - hhvm-3.9
+  - hhvm-3.12
+  - hhvm-3.15
+  - hhvm-3.18
+  - hhvm-nightly
+before_script: composer require atoum/atoum
+script: vendor/bin/atoum
+install: php Test.php
